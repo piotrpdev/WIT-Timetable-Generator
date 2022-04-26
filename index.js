@@ -66,6 +66,13 @@ function getChromePath () {
   throw new TypeError(`Cannot run action. ${type} is not supported.`)
 }
 
+const fields = {
+  SCHOOL: '[name="cboSchool"]',
+  DEPT: '[name="CboDept"]',
+  POS: '[name="CboPOS"]',
+  GROUP: '[name="CboStudParentGrp"]'
+}
+
 try {
   // ? https://stackoverflow.com/a/62892482
   const __filename = fileURLToPath(import.meta.url)
@@ -91,7 +98,7 @@ try {
 
   const date = ((new Date()).toISOString()).replaceAll(':', '-').replaceAll('.', '-')
 
-  console.log(`Launching at ${date} using ${width}x${height}.`)
+  console.log(`\nLaunching at ${date} using ${width}x${height}.`)
   const browser = await puppeteer.launch({
     // headless: false,
     // slowMo: 250,
@@ -102,19 +109,10 @@ try {
   console.log('Awaiting page...')
   const page = await browser.newPage()
 
-  console.log('Going to URL...')
+  console.log('Going to URL...\n')
   await page.goto(url, {
     waitUntil: 'networkidle2'
   })
-
-  console.log('Waiting for cboSchool to be visible...')
-  const school = await page.waitForSelector('[name="cboSchool"]')
-
-  // Selecting the school from the dropdown
-  console.log(`Selecting school ('${process.env.SCHOOL}')...`)
-  await school.select(process.env.SCHOOL)
-
-  await page.waitForNetworkIdle() // A POST request is sent to the server after a dropdown value change, so we need to wait for it to finish.
 
   // If it's the weekend, get next week's timetable. (Technically the timetable updates late Friday, but I'm lazy.)
   const currentDay = new Date().getDay()
@@ -129,70 +127,54 @@ try {
     console.log(`Current value: Week ${val}`)
     val = String(Number(val) + 1)
 
-    console.log(`Setting value to: Week ${val}`)
+    console.log(`Setting value to: Week ${val}\n`)
     await weeks.select(val)
 
     await page.waitForNetworkIdle()
   }
 
-  console.log('Waiting for CboDept to be visible...')
-  const dept = await page.waitForSelector('[name="CboDept"]')
+  for (const [name, selector] of Object.entries(fields)) {
+    console.log(`Waiting for ${selector} to be visible...`)
+    const handle = await page.waitForSelector(selector)
 
-  // Selecting the dept from the dropdown
-  console.log(`Selecting dept ('${process.env.DEPT}')...`)
-  await dept.select(process.env.DEPT)
+    // Selecting the value from the dropdown
+    console.log(`Selecting value ('${process.env[name]}')...\n`)
+    await handle.select(process.env[name])
 
-  await page.waitForNetworkIdle()
+    await page.waitForNetworkIdle() // A POST request is sent to the server after a dropdown value change, so we need to wait for it to finish.
+  }
 
-  console.log('Waiting for CboPOS to be visible...')
-  const pos = await page.waitForSelector('[name="CboPOS"]')
+  console.log('Finished with details!\n')
 
-  // Selecting the pos from the dropdown
-  console.log(`Selecting pos ('${process.env.POS}')...`)
-  await pos.select(process.env.POS)
-
-  await page.waitForNetworkIdle()
-
-  console.log('Waiting for CboStudParentGrp to be visible...')
-  const group = await page.waitForSelector('[name="CboStudParentGrp"]')
-
-  // Selecting the pos from the dropdown
-  console.log(`Selecting group ('${process.env.GROUP}')...`)
-  await group.select(process.env.GROUP)
-
-  await page.waitForNetworkIdle() // Just in case.
-
-  console.log('Finished with details!')
-
-  console.log('Waiting for BtnRetrieve to be visible...')
+  console.log('Waiting for [name="BtnRetrieve"] to be visible...')
   const genBtn = await page.waitForSelector('[name="BtnRetrieve"]')
 
-  console.log('Clicking BtnRetrieve...')
+  console.log('Clicking...\n')
   await genBtn.click()
 
   await page.waitForNetworkIdle()
 
-  console.log('Isolating table...')
+  console.log('Isolating table...\n')
 
   const [divHeight, divWidth] = await page.evaluate(() => {
     document.body.innerHTML = '<html><head><style>#divTT { margin: 30px; width: min-content; }</style></head><body>' + document.querySelector('#divTT').outerHTML + '</body>'
     return [document.querySelector('#divTT').offsetHeight, document.querySelector('#divTT').offsetWidth]
   })
 
-  console.log(`Creating Screenshot (${divWidth + 30 * 2}x${divHeight + 30 * 2}) (at ${screenshotDir})...`)
+  console.log(`Creating Screenshot (${divWidth + 30 * 2}x${divHeight + 30 * 2}) (at ${screenshotDir})...\n`)
 
   await page.screenshot({
     path: join(screenshotDir, `${date}.png`),
     clip: { x: 0, y: 0, width: divWidth + 30 * 2, height: divHeight + 30 * 2 }
   })
 
-  console.log(`Creating PDF (at ${pdfDir})...`)
-
   console.log('Emulating screen media...')
   await page.emulateMediaType('screen')
 
   console.log('Restoring colour...')
   await page.addStyleTag({ content: 'html { -webkit-print-color-adjust: exact; }' })
+
+  console.log(`Creating PDF (at ${pdfDir})...\n`)
 
   await page.pdf({ path: join(pdfDir, `${date}.pdf`), margin: { right: '30px' } })
 
