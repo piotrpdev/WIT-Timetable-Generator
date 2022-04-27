@@ -1,15 +1,15 @@
 {
-  "name": "tt",
+  "name": "wit-timetable-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generates timetable so you don't have to input your details every time.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "piotrpdev",
+  "license": "MIT",
   "devDependencies": {
     "dotenv": "^16.0.0",
     "eslint": "^8.14.0",
@@ -19,6 +19,7 @@
     "eslint-plugin-promise": "^6.0.0"
   },
   "dependencies": {
+    "node-fetch": "^3.2.3",
     "puppeteer-core": "^13.6.0"
   }
 }

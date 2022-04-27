@@ -26,14 +26,18 @@ import { type } from 'os'
 import { fileURLToPath } from 'url'
 import { join, normalize, dirname } from 'path'
 import dotenv from 'dotenv'
+import { sendToDiscord } from './discord.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 if (!process.env.GITHUB_ACTIONS) {
   console.log('Running locally')
   // Check if the .env file exists
-  if (!existsSync(join(dirname(fileURLToPath(import.meta.url)), '.env'))) {
-    if (existsSync(join(dirname(fileURLToPath(import.meta.url)), '.env.local'))) {
+  if (!existsSync(join(__dirname, '.env'))) {
+    if (existsSync(join(__dirname, '.env.local'))) {
       console.log('No .env file found, using .env.local instead.')
-      dotenv.config({ path: join(dirname(fileURLToPath(import.meta.url)), '.env.local') })
+      dotenv.config({ path: join(__dirname, '.env.local') })
     } else {
       console.log('No .env or .env.local file found, I hope you know what you\'re doing.')
     }
@@ -75,9 +79,6 @@ const fields = {
 
 try {
   // ? https://stackoverflow.com/a/62892482
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = dirname(__filename)
-
   const screenshotDir = join(__dirname, 'screenshots')
   const pdfDir = join(__dirname, 'pdfs')
 
@@ -100,6 +101,7 @@ try {
 
   console.log(`\nLaunching at ${date} using ${width}x${height}.`)
   const browser = await puppeteer.launch({
+    ...(process.env.ACT && { args: ['--no-sandbox', '--disable-setuid-sandbox'] }), // ? For testing purposes (act)
     // headless: false,
     // slowMo: 250,
     executablePath: getChromePath(),
@@ -138,7 +140,7 @@ try {
     const handle = await page.waitForSelector(selector)
 
     // Selecting the value from the dropdown
-    console.log(`Selecting value ('${process.env[name]}')...\n`)
+    console.log(`Selecting value${process.env.GITHUB_ACTIONS ? '' : ` ('${process.env[name]}')`}...\n`)
     await handle.select(process.env[name])
 
     await page.waitForNetworkIdle() // A POST request is sent to the server after a dropdown value change, so we need to wait for it to finish.
@@ -157,7 +159,7 @@ try {
   console.log('Isolating table...\n')
 
   const [divHeight, divWidth] = await page.evaluate(() => {
-    document.body.innerHTML = '<html><head><style>#divTT { margin: 30px; width: min-content; }</style></head><body>' + document.querySelector('#divTT').outerHTML + '</body>'
+    document.body.innerHTML = '<html><head><style>html { -webkit-print-color-adjust: exact; } #divTT { margin: 30px; width: min-content; }</style></head><body>' + document.querySelector('#divTT').outerHTML + '</body>'
     return [document.querySelector('#divTT').offsetHeight, document.querySelector('#divTT').offsetWidth]
   })
 
@@ -171,15 +173,14 @@ try {
   console.log('Emulating screen media...')
   await page.emulateMediaType('screen')
 
-  console.log('Restoring colour...')
-  await page.addStyleTag({ content: 'html { -webkit-print-color-adjust: exact; }' })
-
   console.log(`Creating PDF (at ${pdfDir})...\n`)
 
   await page.pdf({ path: join(pdfDir, `${date}.pdf`), margin: { right: '30px' } })
 
-  console.log('Closing...')
+  console.log('Closing...\n')
   await browser.close()
+
+  await sendToDiscord(join(pdfDir, `${date}.pdf`), join(screenshotDir, `${date}.png`))
 } catch (error) {
   console.log(`Failed to run. ${error}`)
   process.exit(1)
