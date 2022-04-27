@@ -12,6 +12,7 @@ Filling out the form every time is annoying, especially since it refreshes.
 
 > Make sure you have [Node](https://nodejs.org/en/) installed.
 
+* Clone the repo and `cd` into it.
 * `npm i`
 * Fill out your details in `.env.local.example` and rename it to `.env`
 * Comment out the following line from `index.js` if you don't want to use Discord webhooks:
