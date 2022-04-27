@@ -37,7 +37,7 @@ If it is something small, make a change directly and make a pull request.
 If it is something that requires testing:
 
 * Install [act](https://github.com/nektos/act).
-* Rename `env.local.example` to `env.local` and change `ACT` to `true`
+* Rename `env.local.example` to `env.local`
 * Run `act --secret-file .env.local workflow_dispatch` to test changes.
 
 ## License
