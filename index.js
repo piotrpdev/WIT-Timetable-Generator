@@ -97,9 +97,11 @@ try {
   const width = 1920
   const height = 1080
 
-  const date = ((new Date()).toISOString()).replaceAll(':', '-').replaceAll('.', '-')
+  const _date = new Date()
+  const safeDate = (_date).toISOString().replaceAll(/[:.]/g, '-')
+  const formattedDate = new Intl.DateTimeFormat('en-GB', { timeZone: 'Eire', dateStyle: 'short', timeStyle: 'short' }).format(_date).split(', ').reverse().join(', ')
 
-  console.log(`\nLaunching at ${date} using ${width}x${height}.`)
+  console.log(`\nLaunching at ${formattedDate} (${safeDate}) using ${width}x${height}.`)
   const browser = await puppeteer.launch({
     ...(process.env.ACT && { args: ['--no-sandbox', '--disable-setuid-sandbox'] }), // ? For testing purposes (act)
     // headless: false,
@@ -117,23 +119,28 @@ try {
   })
 
   // If it's the weekend, get next week's timetable. (Technically the timetable updates late Friday, but I'm lazy.)
-  const currentDay = new Date().getDay()
+  // const currentDay = new Date().getDay()
 
-  if (currentDay === 0 || currentDay === 6) { // 0 = Sunday, 6 = Saturday
-    console.log('It\'s the weekend, getting next week\'s timetable...')
+  console.log('Waiting for [name="CboWeeks"] to be visible...')
+  const weeks = await page.waitForSelector('[name="CboWeeks"] [selected]')
 
-    const weeks = await page.waitForSelector('[name="CboWeeks"]')
+  const val = await (await weeks.getProperty('value')).jsonValue()
+  const weekText = await (await weeks.getProperty('text')).jsonValue()
 
-    let val = String(await weeks.getProperty('value')).slice(-2)
+  console.log(`Current value: Week ${val} ('${weekText}')\n`)
 
-    console.log(`Current value: Week ${val}`)
-    val = String(Number(val) + 1)
+  // Looks like it automatically does it now (on the weekend)?
+  // Maybe skip on Friday to get next weeks? Add option for this?
+  // if (currentDay === 0 || currentDay === 6) { // 0 = Sunday, 6 = Saturday
+  //   console.log('It\'s the weekend, getting next week\'s timetable...')
 
-    console.log(`Setting value to: Week ${val}\n`)
-    await weeks.select(val)
+  //   // val = String(Number(val) + 1)
 
-    await page.waitForNetworkIdle()
-  }
+  //   // console.log(`Setting value to: Week ${val}\n`)
+  //   // await weeks.select(val)
+
+  //   //await page.waitForNetworkIdle()
+  // }
 
   for (const [name, selector] of Object.entries(fields)) {
     console.log(`Waiting for ${selector} to be visible...`)
@@ -166,7 +173,7 @@ try {
   console.log(`Creating Screenshot (${divWidth + 30 * 2}x${divHeight + 30 * 2}) (at ${screenshotDir})...\n`)
 
   await page.screenshot({
-    path: join(screenshotDir, `${date}.png`),
+    path: join(screenshotDir, `${safeDate}.png`),
     clip: { x: 0, y: 0, width: divWidth + 30 * 2, height: divHeight + 30 * 2 }
   })
 
@@ -175,12 +182,12 @@ try {
 
   console.log(`Creating PDF (at ${pdfDir})...\n`)
 
-  await page.pdf({ path: join(pdfDir, `${date}.pdf`), margin: { right: '30px' } })
+  await page.pdf({ path: join(pdfDir, `${safeDate}.pdf`), margin: { right: '30px' } })
 
   console.log('Closing...\n')
   await browser.close()
 
-  await sendToDiscord(join(pdfDir, `${date}.pdf`), join(screenshotDir, `${date}.png`))
+  await sendToDiscord(weekText.charAt(0).toUpperCase() + weekText.slice(1), join(pdfDir, `${safeDate}.pdf`), join(screenshotDir, `${safeDate}.png`))
 } catch (error) {
   console.log(`Failed to run. ${error}`)
   process.exit(1)

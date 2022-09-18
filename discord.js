@@ -2,7 +2,7 @@
 
 import fetch, { FormData, fileFrom } from 'node-fetch'
 
-export async function sendToDiscord (screenPath, pdfPath) {
+export async function sendToDiscord (content, screenPath, pdfPath) {
   console.log('Getting files...')
   const [screenshot, pdf] = await Promise.all([fileFrom(screenPath), fileFrom(pdfPath)])
 
@@ -11,6 +11,7 @@ export async function sendToDiscord (screenPath, pdfPath) {
   console.log('Setting data...')
 
   formData.set('username', 'Peter\'s Timetable Bot')
+  formData.set('content', content)
   formData.set('avatar_url', 'https://i.imgur.com/oBPXx0D.png')
   formData.set('screenshot', screenshot)
   formData.set('pdf', pdf)
