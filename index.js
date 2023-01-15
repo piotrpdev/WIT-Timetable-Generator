@@ -118,29 +118,36 @@ try {
     waitUntil: 'networkidle2'
   })
 
-  // If it's the weekend, get next week's timetable. (Technically the timetable updates late Friday, but I'm lazy.)
-  // const currentDay = new Date().getDay()
-
   console.log('Waiting for [name="CboWeeks"] to be visible...')
   const weeks = await page.waitForSelector('[name="CboWeeks"] [selected]')
 
-  const val = await (await weeks.getProperty('value')).jsonValue()
-  const weekText = await (await weeks.getProperty('text')).jsonValue()
+  let val = await (await weeks.getProperty('value')).jsonValue()
+  let weekText = await (await weeks.getProperty('text')).jsonValue()
 
   console.log(`Current value: Week ${val} ('${weekText}')\n`)
 
+  // If it's the weekend, get next week's timetable. (Technically the timetable updates late Friday, but I'm lazy.)
+  const currentDay = new Date().getDay()
+
   // Looks like it automatically does it now (on the weekend)?
   // Maybe skip on Friday to get next weeks? Add option for this?
-  // if (currentDay === 0 || currentDay === 6) { // 0 = Sunday, 6 = Saturday
-  //   console.log('It\'s the weekend, getting next week\'s timetable...')
+  // 15/1/23 Doesn't auto update now?
+  if (currentDay === 0 || currentDay === 6) { // 0 = Sunday, 6 = Saturday
+    console.log('It\'s the weekend, getting next week\'s timetable...')
 
-  //   // val = String(Number(val) + 1)
+    val = String(Number(val) + 1)
 
-  //   // console.log(`Setting value to: Week ${val}\n`)
-  //   // await weeks.select(val)
+    console.log(`Setting value to: Week ${val}\n`)
+    const weeksBox = await page.waitForSelector('[name="CboWeeks"]')
+    await weeksBox.select(val)
 
-  //   //await page.waitForNetworkIdle()
-  // }
+    const wks = await page.waitForSelector('[name="CboWeeks"] [selected]')
+    const wksTxt = await wks.getProperty('text')
+
+    weekText = await wksTxt.jsonValue()
+
+    await page.waitForNetworkIdle()
+  }
 
   for (const [name, selector] of Object.entries(fields)) {
     console.log(`Waiting for ${selector} to be visible...`)
