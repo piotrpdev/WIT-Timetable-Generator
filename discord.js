@@ -1,10 +1,16 @@
 // ? Thank you https://birdie0.github.io/discord-webhooks-guide/
 
 import fetch, { FormData, fileFrom } from 'node-fetch'
+import { checkStatus } from './utils.js'
 
-export async function sendToDiscord (content, screenPath, pdfPath) {
+export async function sendToDiscord (content, screenshotFilePath, pdfFilePath) {
+  if (!process.env.WEBHOOK_ID || !process.env.WEBHOOK_TOKEN) {
+    console.log('WEBHOOK_ID and WEBHOOK_TOKEN environment variables are required to send to Discord.')
+    return
+  }
+
   console.log('Getting files...')
-  const [screenshot, pdf] = await Promise.all([fileFrom(screenPath), fileFrom(pdfPath)])
+  const [screenshot, pdf] = await Promise.all([fileFrom(screenshotFilePath), fileFrom(pdfFilePath)])
 
   const formData = new FormData()
 
@@ -17,7 +23,7 @@ export async function sendToDiscord (content, screenPath, pdfPath) {
   formData.set('pdf', pdf)
 
   console.log('Sending to Discord...')
-  const response = await fetch(`https://discord.com/api/webhooks/${process.env.WEBHOOK_ID}/${process.env.WEBHOOK_TOKEN}`, { method: 'POST', body: formData })
+  const response = checkStatus(await fetch(`https://discord.com/api/webhooks/${process.env.WEBHOOK_ID}/${process.env.WEBHOOK_TOKEN}`, { method: 'POST', body: formData }))
   const data = await response.json()
 
   if (process.env.GITHUB_ACTIONS) {
@@ -30,5 +36,5 @@ export async function sendToDiscord (content, screenPath, pdfPath) {
     delete data.webhook_id
   }
 
-  console.log('Response:\n\n', data)
+  !(process.env.HIDE_RESPONSES === '1') && console.log('Response:\n\n', data)
 }

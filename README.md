@@ -2,7 +2,7 @@
 
 ![Example](.github/example/example.png)
 
-Uses [Puppeteer](https://pptr.dev/) to automatically fill out the [WIT Timetable Page](http://studentssp.wit.ie/Timetables/StudentGroupTT.aspx) and generate a screenshot and PDF of the timetable. It also sends these to a [Discord](https://discord.com/) channel using a [webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) (you can opt-out of this).
+Uses [Puppeteer](https://pptr.dev/) to automatically fill out the [WIT Timetable Page](http://studentssp.wit.ie/Timetables/StudentGroupTT.aspx) and generate a screenshot and PDF of the timetable. It can also send these to a [Discord](https://discord.com/) channel using a [webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks).
 
 ## Why?
 
@@ -15,10 +15,10 @@ Filling out the form every time is annoying, especially since it refreshes.
 * Clone the repo and `cd` into it.
 * `npm i`
 * Fill out your details in `.env.local.example` and rename it to `.env`
-* Comment out the following line from `index.js` if you don't want to use Discord webhooks:
+* Change `SKIP_DISCORD` in the `.env` file if you want to use Discord webhooks:
 
 ```js
-await sendToDiscord(...)
+SKIP_DISCORD=0
 ```
 
 * `npm run start`

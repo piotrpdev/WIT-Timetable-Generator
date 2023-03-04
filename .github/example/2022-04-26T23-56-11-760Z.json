@@ -1,0 +1,624 @@
+{
+    "Monday": [
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Georgiou, Nikos",
+            "Room*": "F06"
+        },
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P4 / kcofo_b1-W_P4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Power, David",
+            "Room*": "W05"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Georgiou, Nikos",
+            "Room*": "F06"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P4 / kcofo_b1-W_P4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Power, David",
+            "Room*": "W05"
+        },
+        {
+            "Time": "11:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2 / kphte_b2 W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "F02"
+        },
+        {
+            "Time": "11:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P5 / kcofo_b1-W_P5 / kintt_b1-W_W5",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Murphy, Joe",
+            "Room*": "W05"
+        },
+        {
+            "Time": "12:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2 / kphte_b2 W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "E19B"
+        },
+        {
+            "Time": "12:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P5 / kcofo_b1-W_P5 / kintt_b1-W_W5",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Murphy, Joe",
+            "Room*": "W05"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lacey, Richard",
+            "Room*": "W13"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "O Connor, Robert",
+            "Room*": "TL221"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "T - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Flynn, Denis",
+            "Room*": "TL251"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "O Connor, Robert",
+            "Room*": "TL221"
+        }
+    ],
+    "Tuesday": [
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P2 / kcofo_b1-W_P2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Fox, Helen",
+            "Room*": "W03"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "TL158"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P2 / kcofo_b1-W_P2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Fox, Helen",
+            "Room*": "W03"
+        },
+        {
+            "Time": "11:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "E07"
+        },
+        {
+            "Time": "11:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_P1 / kcofo_b1-W_P1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Alhourani, Mohammad",
+            "Room*": "W03"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Daly Walsh, Anne",
+            "Room*": "F04"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Birney, Rosanne",
+            "Room*": "F02"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Daly Walsh, Anne",
+            "Room*": "F04"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Birney, Rosanne",
+            "Room*": "F02"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Mullally, Brenda",
+            "Room*": "FTG13"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W1/W2",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Georgiou, Nikos",
+            "Room*": "F02"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Mullally, Brenda",
+            "Room*": "FTG13"
+        }
+    ],
+    "Wednesday": [
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "O Connor, Robert",
+            "Room*": "D04"
+        },
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Alhourani, Mohammad",
+            "Room*": "F09"
+        },
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Mullally, Brenda",
+            "Room*": "IT221"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "O Connor, Robert",
+            "Room*": "D04"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2 / kphte_b2 W_W",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "IT119"
+        },
+        {
+            "Time": "10:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Mullally, Brenda",
+            "Room*": "IT221"
+        },
+        {
+            "Time": "11:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2 / kphte_b2 W_W",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "IT119"
+        },
+        {
+            "Time": "12:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lyons, Tony",
+            "Room*": "IT220"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lacey, Richard",
+            "Room*": "D04"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lyons, Tony",
+            "Room*": "IT101"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "IT118"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "IT203"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lacey, Richard",
+            "Room*": "D04"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2",
+            "Type": "T - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Flynn, Denis",
+            "Room*": "F20"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "IT118"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lyons, Tony",
+            "Room*": "IT221"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Birney, Rosanne",
+            "Room*": "IT103"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "IT118"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Mullally, Brenda",
+            "Room*": "IT202"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lacey, Richard",
+            "Room*": "IT221"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Birney, Rosanne",
+            "Room*": "IT103"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "IT118"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Mullally, Brenda",
+            "Room*": "IT202"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lacey, Richard",
+            "Room*": "IT221"
+        }
+    ],
+    "Thursday": [
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Alhourani, Mohammad",
+            "Room*": "C26"
+        },
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W3/W4 / kcofo_b1-W_W3/W4 / kintt_b1-W3/W4",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Daly Walsh, Anne",
+            "Room*": "F06"
+        },
+        {
+            "Time": "12:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "T - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Daly Walsh, Anne",
+            "Room*": "E07"
+        },
+        {
+            "Time": "12:15",
+            "Subject Code and Title": "COMP-0547 Physics II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Alhourani, Mohammad",
+            "Room*": "F07"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "T - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Daly Walsh, Anne",
+            "Room*": "F09"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "IT119"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2 / kphte_b2 W_W",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Drohan, Siobhan",
+            "Room*": "IT119"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "IT221"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "IT118"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Birney, Rosanne",
+            "Room*": "IT120"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0545 Applied Calculus",
+            "Student Group": "kaccm_b1-W_W4 / kcofo_b1-W_W4 / kintt_b1-W_W4",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lyons, Tony",
+            "Room*": "IT202"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Cahill, Caroline",
+            "Room*": "ITG17"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0378 Programming Fundamentals II",
+            "Student Group": "kaccm_b1-W_W3 / kcofo_b1-W_W3 / kintt_b1-W_W3",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Meagher, Mairead",
+            "Room*": "IT118"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0622 Web App Development 1",
+            "Student Group": "kaccm_b1-W_W2 / kcofo_b1-W_W2 / kintt_b1-W_W2",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Birney, Rosanne",
+            "Room*": "IT120"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W1 / kcofo_b1-W_W1 / kintt_b1-W_W1",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Cahill, Caroline",
+            "Room*": "ITG17"
+        }
+    ],
+    "Friday": [
+        {
+            "Time": "09:15",
+            "Subject Code and Title": "COMP-0546 Computer Systems II",
+            "Student Group": "kaccm_b1-W_W1/W2 / kcofo_b1-W_W1/W2 / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Lacey, Richard",
+            "Room*": "E15"
+        },
+        {
+            "Time": "13:15",
+            "Subject Code and Title": "PROJ-0157 Project Semester 2",
+            "Student Group": "kaccm_b1-W_IOT / kintt_b1-W_W",
+            "Type": "L - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Walsh, Frank W",
+            "Room*": "FTG24"
+        },
+        {
+            "Time": "14:15",
+            "Subject Code and Title": "PROJ-0157 Project Semester 2",
+            "Student Group": "kaccm_b1-W_IOT / kintt_b1-W_W",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Walsh, Frank W",
+            "Room*": "FTG24"
+        },
+        {
+            "Time": "15:15",
+            "Subject Code and Title": "PROJ-0157 Project Semester 2",
+            "Student Group": "kaccm_b1-W_IOT / kintt_b1-W_W",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Walsh, Frank W",
+            "Room*": "FTG24"
+        },
+        {
+            "Time": "16:15",
+            "Subject Code and Title": "PROJ-0157 Project Semester 2",
+            "Student Group": "kaccm_b1-W_IOT / kintt_b1-W_W",
+            "Type": "P - OnCampus",
+            "Dur": "1",
+            "Lecturer": "Walsh, Frank W",
+            "Room*": "FTG24"
+        }
+    ]
+}
