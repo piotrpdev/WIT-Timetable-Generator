@@ -34,5 +34,5 @@ export async function getExampleTimetable (__dirname) {
 
   const timetableJson = JSON.parse(await readFile(jsonFilePath, 'utf8'))
 
-  return { weekText: 'week 35 (25-APR-22)', screenshotFilePath, pdfFilePath, timetableJson }
+  return { weekText: 'Week 35 (25-APR-22)', screenshotFilePath, pdfFilePath, timetableJson }
 }

@@ -7,6 +7,7 @@ import { existsSync, mkdirSync } from 'fs'
 import { join } from 'path'
 import { getChromePath } from './chrome.js'
 import { generateJson } from './generateJson.js'
+import { writeFile } from 'fs/promises'
 
 const fields = {
   SCHOOL: '[name="cboSchool"]',
@@ -15,7 +16,7 @@ const fields = {
   GROUP: '[name="CboStudParentGrp"]'
 }
 
-export async function getTimetable (screenshotDir, pdfDir) {
+export async function getTimetable (screenshotDir, pdfDir, jsonDir) {
   if (!existsSync(screenshotDir)) {
     console.log(`Creating '${screenshotDir}'.`)
     mkdirSync(screenshotDir)
@@ -24,6 +25,11 @@ export async function getTimetable (screenshotDir, pdfDir) {
   if (!existsSync(pdfDir)) {
     console.log(`Creating '${pdfDir}'.`)
     mkdirSync(pdfDir)
+  }
+
+  if (!existsSync(jsonDir)) {
+    console.log(`Creating '${jsonDir}'.`)
+    mkdirSync(jsonDir)
   }
 
   const url = 'http://studentssp.wit.ie/Timetables/StudentGroupTT.aspx'
@@ -104,9 +110,28 @@ export async function getTimetable (screenshotDir, pdfDir) {
 
   await page.waitForNetworkIdle()
 
+  weekText = weekText.charAt(0).toUpperCase() + weekText.slice(1)
+
   console.log('Generating JSON...\n')
 
   const timetableJson = await generateJson(page)
+
+  timetableJson.weekText = weekText
+  timetableJson.generatedDate = formattedDate
+
+  timetableJson.devDetails = {}
+  timetableJson.devDetails.generatedDate = _date
+
+  for (const [name, selector] of Object.entries(fields)) {
+    const dropValue = await page.waitForSelector(`${selector} [selected]`)
+    const dropValueTxt = await dropValue.getProperty('text')
+
+    timetableJson[name] = await dropValueTxt.jsonValue()
+    timetableJson.devDetails[name] = process.env[name]
+  }
+
+  const jsonFilePath = join(jsonDir, `${safeDate}.json`)
+  writeFile(jsonFilePath, JSON.stringify(timetableJson, null, 2))
 
   console.log('JSON generated!\n')
   // ! (process.env.HIDE_RESPONSES === '1') && console.dir(timetableJson)

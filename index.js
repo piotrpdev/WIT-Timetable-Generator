@@ -33,11 +33,12 @@ const __dirname = dirname(__filename)
 
 const screenshotDir = join(__dirname, 'screenshots')
 const pdfDir = join(__dirname, 'pdfs')
+const jsonDir = join(__dirname, 'json')
 
 handleLocalDev(__dirname)
 
-const { weekText, screenshotFilePath, pdfFilePath, timetableJson } = !(process.env.USE_LOCAL_TIMETABLE === '1') ? await getTimetable(screenshotDir, pdfDir) : await getExampleTimetable(__dirname)
+const { weekText, screenshotFilePath, pdfFilePath, timetableJson } = !(process.env.USE_LOCAL_TIMETABLE === '1') ? await getTimetable(screenshotDir, pdfDir, jsonDir) : await getExampleTimetable(__dirname)
 
-!(process.env.SKIP_DISCORD === '1') && await sendToDiscord(weekText.charAt(0).toUpperCase() + weekText.slice(1), screenshotFilePath, pdfFilePath)
+!(process.env.SKIP_DISCORD === '1') && await sendToDiscord(weekText, screenshotFilePath, pdfFilePath)
 
 !(process.env.SKIP_JSON_UPLOAD === '1') && await uploadToGist(timetableJson, weekText)

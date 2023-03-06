@@ -32,7 +32,7 @@ export function generateJson (page) {
         , {}))
       }
 
-      return result
+      return { days: result }
     }
 
     console.clear()
