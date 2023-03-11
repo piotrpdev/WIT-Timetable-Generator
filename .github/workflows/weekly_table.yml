@@ -36,3 +36,5 @@ jobs:
         GROUP: ${{ secrets.GROUP }}
         WEBHOOK_ID: ${{ secrets.WEBHOOK_ID }}
         WEBHOOK_TOKEN: ${{ secrets.WEBHOOK_TOKEN }}
+        GH_GIST_ID: ${{ secrets.GH_GIST_ID }}
+        GH_PAT: ${{ secrets.GH_PAT }}
