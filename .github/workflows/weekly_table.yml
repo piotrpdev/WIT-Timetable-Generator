@@ -6,7 +6,7 @@ name: Send weekly table to Discord
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * 1-4 6' # '0 10 * 1-4,9-12 6'
+    - cron:  '0 10 * 1-4,9-12 6'
 
 jobs:
   build:
